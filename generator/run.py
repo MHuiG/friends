@@ -16,7 +16,7 @@ def load_config():
 def github_issuse(data_pool):
     print('\n')
     print('------- github issues start ----------')
-    baselink = 'https://github.mhuig.top/'
+    baselink = 'https://github.com/'
     config = load_config()
     try:
         for number in range(1, 100):
@@ -25,7 +25,7 @@ def github_issuse(data_pool):
                 label_plus = '+label%3A' + config['issues']['label']
             else:
                 label_plus = ''
-            github = request.get_data('https://github.mhuig.top/' +
+            github = request.get_data('https://github.com/' +
                              config['issues']['repo'] +
                              '/issues?q=is%3A' + config['issues']['state'] + str(label_plus) + '&page=' + str(number))
             soup = BeautifulSoup(github, 'html.parser')
