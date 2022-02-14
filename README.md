@@ -1,6 +1,6 @@
 # 友链数据源
 
-前端页面： https://
+前端页面： https://blog.mhuig.top/friends/
 
 ## 什么类型的网站可以添加
 
@@ -12,4 +12,4 @@
 
 ## 如何添加
 
-根据您的网站类型选择一个合适的 [Issue 模板](https://github.com/xxxxxx/friends/issues/new/choose) ，按照模板内容填写并提交。
+根据您的网站类型选择一个合适的 [Issue 模板](https://github.com/MHuiG/friends/issues/new/choose) ，按照模板内容填写并提交。
