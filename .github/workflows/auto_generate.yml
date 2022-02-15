@@ -31,4 +31,4 @@ jobs:
         rebase: 'true'
         commit-message: 'Generate Json'
         name: github-actions[bot]
-        email: github-actions[bot]@noreply.github.com
+        email: github-actions[bot]@users.noreply.github.com
