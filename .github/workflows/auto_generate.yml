@@ -24,7 +24,7 @@ jobs:
         python generator/run.py
         echo `date +"%Y-%m-%d %H:%M:%S"` begin > generator/time.log
     - name: Commit & Push
-      uses: action-x/commit@v2.8
+      uses: action-x/commit@v2
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
         push-branch: 'main'
