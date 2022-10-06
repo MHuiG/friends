@@ -1,6 +1,6 @@
 # 友链数据源
 
-前端页面： https://blog.mhuig.top/friends/
+前端页面： https://blog.mhuig.top/pages/friends/
 
 ## 什么类型的网站可以添加
 
