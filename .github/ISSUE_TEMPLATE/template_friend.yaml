@@ -29,7 +29,8 @@ body:
             "url": "",
             "avatar": "",
             "screenshot": "",
-            "description": ""
+            "description": "",
+            "keywords": ""
         }
         ```
   - type: input
