@@ -12,7 +12,8 @@
 
 ## 如何添加
 
-根据您的网站类型选择一个合适的 [Issue 模板](https://github.com/MHuiG/friends/issues/new/choose) ，按照模板内容填写并提交。
+
+按照 [Issue 模板](https://github.com/MHuiG/friends/issues/new/choose) 内容填写并提交，审核通过3分钟后博客即可看到友链。
 
 -------
 
