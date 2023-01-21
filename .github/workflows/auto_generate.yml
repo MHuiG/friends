@@ -28,6 +28,7 @@ jobs:
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
         push-branch: 'main'
+        force-push: 'true'
         rebase: 'true'
         commit-message: 'Generate Json'
         name: github-actions[bot]
