@@ -1,0 +1,48 @@
+name: 友链模板
+description: 自助添加友链。
+labels: []
+body:
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: 检查清单
+      description: 请认真检查以下清单中的每一项，并在相符的项前打勾。
+      options:
+        - required: true
+          label: 合法的、非营利性、无商业广告站点。
+        - required: false
+          label: 有实质性原创内容的个人博客或组织。
+        - required: false
+          label: 必须是 HTTPS 独立域名。
+        - required: false
+  - type: textarea
+    id: config-file
+    validations:
+      required: true
+    attributes:
+      label: 友链信息
+      description: 请在双引号中填写，不要修改格式。
+      value: |
+        ```json
+        {
+            "title": "",
+            "url": "",
+            "avatar": "",
+            "screenshot": "",
+            "description": ""
+        }
+        ```
+  - type: input
+    id: friends-html
+    attributes:
+      label: 友链地址
+      description: 请输入您的友链页面地址。
+      placeholder: "如: https://blog.mhuig.top/pages/friends/"
+    validations:
+      required: true
+  - type: input
+    id: friends-repo
+    attributes:
+      label: 友链仓库（可选）
+      description: 如果您使用 issue 作为友链源，请附上 issue 仓库链接。
+      placeholder: "如: https://github.com/MHuiG/friends/"
