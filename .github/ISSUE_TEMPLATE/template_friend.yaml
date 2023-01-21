@@ -14,7 +14,7 @@ body:
           label: 有实质性原创内容的个人博客或组织。
         - required: false
           label: 必须是 HTTPS 独立域名。
-        - required: false
+  
   - type: textarea
     id: config-file
     validations:
