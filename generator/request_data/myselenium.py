@@ -3,6 +3,10 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 import chromedriver_autoinstaller
 from pyvirtualdisplay import Display
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
 display = Display(visible=0, size=(800, 800))  
 display.start()
 
@@ -33,8 +37,10 @@ for option in options:
 
 def get(url):
   driver = webdriver.Chrome(options = chrome_options)
-
-  driver.get('http://github.com')
+  driver.get(url)
+  WebDriverWait(driver, 10).until(
+    EC.presence_of_element_located((By.ID, "kw"))
+  )
   print(driver.title)
-  return driver.get(url)
+  return driver
 
