@@ -32,7 +32,7 @@ def github_issuse(data_pool):
             #github = request.get_data(github_link)
             soup = BeautifulSoup(github, 'html.parser')
             linklist = soup.find_all('a', {'data-testid': 'issue-pr-title-link'})
-            print(len(linklist))
+            #print(len(linklist))
             if len(linklist) == 0:
                 print('> end')
                 break
@@ -53,7 +53,7 @@ def github_issuse(data_pool):
                 except:
                     continue
     except Exception as e:
-        raise Exception(e)
+        #raise Exception(e)
         print('> end')
 
     print('------- github issues end ----------')
