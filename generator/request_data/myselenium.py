@@ -33,5 +33,8 @@ for option in options:
     
 driver = webdriver.Chrome(options = chrome_options)
 
-driver.get('http://github.com')
-print(driver.title)
+# driver.get('http://github.com')
+# print(driver.title)
+def get(url):
+  return driver.get(url)
+
