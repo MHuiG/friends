@@ -28,11 +28,11 @@ def github_issuse(data_pool):
             github = request.get_data('https://github.com/' +
                              config['issues']['repo'] +
                              '/issues?q=is%3A' + config['issues']['state'] + str(label_plus) + '&page=' + str(number))
-            print(github)
+            #print(github)
             soup = BeautifulSoup(github, 'html.parser')
-            main_content = soup.find_all('div',{'aria-label': 'Issues'})
-            print(main_content)
-            linklist = main_content[0].find_all('a', {'class': 'Link--primary'})
+            #main_content = soup.find_all('div',{'aria-label': 'Issues'})
+            #print(main_content)
+            linklist = soup.find_all('a', {'data-testid': 'issue-pr-title-link'})
             if len(linklist) == 0:
                 print('> end')
                 break
