@@ -4,7 +4,6 @@ from bs4 import BeautifulSoup
 import yaml
 from request_data import request
 import json
-import re
 
 data_pool = []
 
@@ -30,8 +29,8 @@ def github_issuse(data_pool):
                              config['issues']['repo'] +
                              '/issues?q=is%3A' + config['issues']['state'] + str(label_plus) + '&page=' + str(number))
             soup = BeautifulSoup(github, 'html.parser')
-            linklist = soup.find_all('a',attrs={'href': re.compile('^/MHuiG/friends/issues/')}) # {'data-testid': 'issue-pr-title-link'}, limit=1000)
-            print(len(linklist))
+            linklist = soup.find_all('a', {'data-testid': 'issue-pr-title-link'})
+            #print(len(linklist))
             if len(linklist) == 0:
                 print('> end')
                 break
@@ -47,12 +46,12 @@ def github_issuse(data_pool):
                         source = json.loads(source)
                         print(source)
                         data_pool.append(source)
-                    else:
-                        print("******:"+source)
+                    #else:
+                    #    print("******:"+source)
                 except:
                     continue
     except Exception as e:
-        raise Exception(e)
+        #raise Exception(e)
         print('> end')
 
     print('------- github issues end ----------')
