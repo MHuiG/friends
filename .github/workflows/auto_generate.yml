@@ -19,6 +19,14 @@ jobs:
     - name: Install requirements #安装requests
       run: |
         pip install -r requirements.txt
+    - name: Installing package list
+      run: apt list --installed    
+    - name: Removing previous chrome instances on runner 
+      run: sudo apt purge google-chrome-stable  
+    - name: Installing all necessary packages
+      run: pip install chromedriver-autoinstaller selenium pyvirtualdisplay
+    - name: Install xvfb
+      run: sudo apt-get install xvfb
     - name: Update links #更新
       run: |
         python generator/run.py
