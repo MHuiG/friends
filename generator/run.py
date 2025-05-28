@@ -26,11 +26,12 @@ def github_issuse(data_pool):
                 label_plus = '+label%3A' + config['issues']['label']
             else:
                 label_plus = ''
-            github = request.get_data('https://github.com/' +
+            github_link = 'https://github.com/' +
                              config['issues']['repo'] +
-                             '/issues?q=is%3A' + config['issues']['state'] + str(label_plus) + '&page=' + str(number))
-            drive = myselenium(github)
+                             '/issues?q=is%3A' + config['issues']['state'] + str(label_plus) + '&page=' + str(number)
+            drive = myselenium(github_link)
             print(drive.title)
+            github = request.get_data(github_link)
             soup = BeautifulSoup(github, 'html.parser')
             linklist = soup.find_all('a', {'data-testid': 'issue-pr-title-link'})
             #print(len(linklist))
@@ -54,7 +55,7 @@ def github_issuse(data_pool):
                 except:
                     continue
     except Exception as e:
-        #raise Exception(e)
+        raise Exception(e)
         print('> end')
 
     print('------- github issues end ----------')
