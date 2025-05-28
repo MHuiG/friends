@@ -30,6 +30,7 @@ def github_issuse(data_pool):
                              '/issues?q=is%3A' + config['issues']['state'] + str(label_plus) + '&page=' + str(number))
             soup = BeautifulSoup(github, 'html.parser')
             linklist = soup.find_all('a', {'data-testid': 'issue-pr-title-link'})
+            print(linklist)
             if len(linklist) == 0:
                 print('> end')
                 break
