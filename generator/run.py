@@ -28,16 +28,14 @@ def github_issuse(data_pool):
             github = request.get_data('https://github.com/' +
                              config['issues']['repo'] +
                              '/issues?q=is%3A' + config['issues']['state'] + str(label_plus) + '&page=' + str(number))
-            #print(github)
             soup = BeautifulSoup(github, 'html.parser')
-            #main_content = soup.find_all('div',{'aria-label': 'Issues'})
-            #print(main_content)
             linklist = soup.find_all('a', {'data-testid': 'issue-pr-title-link'})
             if len(linklist) == 0:
                 print('> end')
                 break
             for item in linklist:
                 issueslink = baselink + item['href']
+                print(issueslink)
                 issues_page = request.get_data(issueslink)
                 issues_soup = BeautifulSoup(issues_page, 'html.parser')
                 try:
@@ -47,6 +45,8 @@ def github_issuse(data_pool):
                         source = json.loads(source)
                         print(source)
                         data_pool.append(source)
+                    else:
+                        print("******:"+source)
                 except:
                     continue
     except Exception as e:
