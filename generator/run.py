@@ -26,9 +26,7 @@ def github_issuse(data_pool):
                 label_plus = '+label%3A' + config['issues']['label']
             else:
                 label_plus = ''
-            github_link = 'https://github.com/' +
-                             config['issues']['repo'] +
-                             '/issues?q=is%3A' + config['issues']['state'] + str(label_plus) + '&page=' + str(number)
+            github_link = 'https://github.com/' + config['issues']['repo'] + '/issues?q=is%3A' + config['issues']['state'] + str(label_plus) + '&page=' + str(number)
             drive = myselenium(github_link)
             print(drive.title)
             github = request.get_data(github_link)
