@@ -4,6 +4,7 @@ from bs4 import BeautifulSoup
 import yaml
 from request_data import request
 import json
+from request_data import myselenium
 
 data_pool = []
 
@@ -28,6 +29,8 @@ def github_issuse(data_pool):
             github = request.get_data('https://github.com/' +
                              config['issues']['repo'] +
                              '/issues?q=is%3A' + config['issues']['state'] + str(label_plus) + '&page=' + str(number))
+            drive = myselenium(github)
+            print(drive.title)
             soup = BeautifulSoup(github, 'html.parser')
             linklist = soup.find_all('a', {'data-testid': 'issue-pr-title-link'})
             #print(len(linklist))
