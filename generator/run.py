@@ -27,8 +27,8 @@ def github_issuse(data_pool):
             else:
                 label_plus = ''
             github_link = 'https://github.com/' + config['issues']['repo'] + '/issues?q=is%3A' + config['issues']['state'] + str(label_plus) + '&page=' + str(number)
-            drive = myselenium.get(github_link)
-            print(drive.title)
+            driver = myselenium.get(github_link)
+            #print(driver.title)
             github = request.get_data(github_link)
             soup = BeautifulSoup(github, 'html.parser')
             linklist = soup.find_all('a', {'data-testid': 'issue-pr-title-link'})
