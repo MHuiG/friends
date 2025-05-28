@@ -31,12 +31,12 @@ jobs:
       run: |
         python generator/run.py
         echo `date +"%Y-%m-%d %H:%M:%S"` begin > generator/time.log
-#    - name: Commit & Push
-#      uses: action-x/commit@v2.9
-#      with:
-#        github-token: ${{ secrets.GITHUB_TOKEN }}
-#        push-branch: 'output'
-#        force-push: 'true'
-#        commit-message: 'Generate Json'
-#        name: github-actions[bot]
-#        email: github-actions[bot]@users.noreply.github.com
+    - name: Commit & Push
+      uses: action-x/commit@v2.9
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        push-branch: 'output'
+        force-push: 'true'
+        commit-message: 'Generate Json'
+        name: github-actions[bot]
+        email: github-actions[bot]@users.noreply.github.com
