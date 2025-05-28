@@ -38,9 +38,8 @@ for option in options:
 def get(url):
   driver = webdriver.Chrome(options = chrome_options)
   driver.get(url)
-  WebDriverWait(driver, 10).until(
-    EC.presence_of_element_located((By.ID, "kw"))
-  )
+  #WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, "kw")))
+  driver.implicitly_wait(10)
   print(driver.title)
   return driver
 
