@@ -9,14 +9,14 @@ labels:
           
           您已经完成了友链申请，由于博主设置了友链申请条件，接下来博主将会等待条件满足后完成审批。
 
-          > 如果您还未满足互换友链的条件，可以先去 [博客](https://xaoxuu.com) 里互动互动～
+          > 如果您还未满足互换友链的条件，可以先去 [博客](https://blog.mhuig.top/) 里互动互动～
           
     unlabeled:
       issue:
         body: |
           **🎉 恭喜，友链添加成功！**
 
-          稍后片刻刷新 [网页](https://xaoxuu.com/friends/) 就可以看到您的链接。
+          稍后片刻刷新 [网页](https://blog.mhuig.top/pages/friends/) 就可以看到您的链接。
 
           > 如果您的站点信息发生了变动，请直接修改这个 issue 的内容。
   
